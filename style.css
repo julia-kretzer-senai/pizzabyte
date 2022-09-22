@@ -1,4 +1,9 @@
+/* fonte */
+
 @import url('https://fonts.googleapis.com/css2?family=Anaheim&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+
+/* todas as páginas */
 
 body {
     background-color: #070024;
@@ -13,10 +18,10 @@ header {
     padding-top: 30px;
 }
 
-a {
+header a {
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 40px;
     text-decoration: none;
     font-size: 250%;
 }
@@ -42,11 +47,13 @@ a {
     margin: 0 0;
 }
 
+/* landing page */
+
 .content {
     display: flex;
 }
 
-main {
+#main-landing {
     width: 74%;
     padding: 5%;
     padding-top: 7%;
@@ -74,6 +81,7 @@ main {
     border: 3px solid;
     border-radius: 5px;
     font-size: 250%;
+    text-decoration: none;
 }
 
 #cardapio-btn {
@@ -87,9 +95,10 @@ main {
     margin-top: 2%;
     background-color: #e12c2c;
     border-color: #a70b0b;
+    color: #f2f2f2;
 }
 
-aside {
+#aside-landing {
     position: fixed;
     right: 0pt;
     bottom: 0pt;
@@ -100,4 +109,80 @@ aside {
 .detalhe {
     width: 280px;
     float: right;
+}
+
+/* cardapio */
+
+.main-cardapio {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cardapio-title {
+    width: 100%;
+    text-align: center;
+    font-size: 500%;
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+}
+
+.secao-titulo {
+    font-size: 312.5%;
+    width: 28.4%;
+    float: left;
+    padding-left: 40px;
+    margin-top: 5%;
+}
+
+#destaque {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+}
+
+#destaque-container {
+    display: flex;
+    text-align: center;
+    width: 71.6%;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+
+.sabor-destaque {
+    width: 256px;
+    height: 192px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+#chef {
+    background-color: #ffa500;
+}
+
+#calabresa {
+    background-color: #e12c2c;
+}
+
+#alcatra {
+    background-color: #a70b0b;
+}
+
+.opcoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 250%;
+    justify-content: space-evenly;
+}
+
+#salgadas-container {
+    width: 66%;
+    margin-right: 40px;
+    border-radius: 5px;
+    margin-top: 5%;
+    background-color: #ffa500;
+}
+
+.sabor-salgada {
+    margin: 2% 5%;
 }
