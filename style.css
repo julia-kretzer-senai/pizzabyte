@@ -16,6 +16,8 @@ header {
     height: 100px;
     text-align: center;
     padding-top: 30px;
+    position: fixed;
+    background-color: #070024;
 }
 
 header a {
@@ -54,6 +56,7 @@ header a {
 }
 
 #main-landing {
+    margin-top: 10%;
     width: 74%;
     padding: 5%;
     padding-top: 7%;
@@ -117,6 +120,7 @@ header a {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    padding-top: 10%;
 }
 
 .cardapio-title {
@@ -129,7 +133,7 @@ header a {
 
 .secao-titulo {
     font-size: 312.5%;
-    width: 28.4%;
+    width: 23%;
     float: left;
     padding-left: 40px;
     margin-top: 5%;
@@ -156,6 +160,10 @@ header a {
     margin: 0;
 }
 
+.sabor-destaque h3 {
+    font-size: 150%;
+}
+
 #chef {
     background-color: #ffa500;
 }
@@ -168,21 +176,74 @@ header a {
     background-color: #a70b0b;
 }
 
+.img {
+    width: 185px;
+    height: 124px;
+    border: white dashed 2px;
+    margin-top: 16px;
+}
+
 .opcoes-container {
     display: flex;
     flex-wrap: wrap;
     font-size: 250%;
     justify-content: space-evenly;
-}
-
-#salgadas-container {
-    width: 66%;
+    width: 71%;
     margin-right: 40px;
     border-radius: 5px;
     margin-top: 5%;
+}
+
+#salgadas-container {
     background-color: #ffa500;
 }
 
-.sabor-salgada {
+#doces-container {
+    background-color: #e12c2c;
+}
+
+#bebidas-container {
+    background-color: #a70b0b;
+}
+
+.sabor {
     margin: 2% 5%;
 }
+
+#bebidas {
+    margin-bottom: 50px;
+}
+
+/* dados */
+
+    #main-dados {
+        padding-top: 10%;
+        color: black;
+        width: 50%;
+        aspect-ratio: 2/1;
+        background-color: #ffdf00;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #main-dados h2 {
+        font-family: 'Source Sans Pro';
+        font-weight: 600;
+        font-size: 250%;
+        width: 100%;
+        height: 10%;
+        margin: 2% 0 5% 0;
+        text-align: center;
+    }
+
+    .labels {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+    }
+
+    .inputs {
+        width: 50%;
+    }
