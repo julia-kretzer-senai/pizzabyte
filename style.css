@@ -247,3 +247,34 @@ header a {
     .inputs {
         width: 50%;
     }
+
+/* salgada */
+
+#main-salgada {
+    padding-top: 7.5%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20%;
+}
+
+.pedido-bg {
+    width: 100%;
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#pedido-salgada {
+    background-color: #ffa500;
+}
+
+#pedido-salgada h2 {
+    width: 100%;
+}
+
+.coluna1, .coluna2, .coluna3 {
+    width: 33%;
+}   
