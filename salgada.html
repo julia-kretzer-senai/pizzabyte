@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <title>PizzaByte | Pizza salgada</title>
-    <link rel="icon" type="image/x-icon" href="/img/pizza.png">
+    <link rel="icon" type="image/x-icon" href="/img/pizza.ico">
 </head>
 <body>
     <header>
@@ -27,24 +27,24 @@
                 <div class="coluna1">
                     <h3>tamanho:</h3>
                     <div class="p">
-                        <input type="radio" name="tamanho-salgada" id="p">
+                        <input type="radio" name="tamanho-salgada" id="p" value="p" checked>
                         <label for="p">P R$44,90</label>
                     </div>
                     <div class="m">
-                        <input type="radio" name="tamanho-salgada" id="m">
+                        <input type="radio" name="tamanho-salgada" id="m" value="m">
                         <label for="m">M R$74,90</label>
                     </div>
                     <div class="g">
-                        <input type="radio" name="tamanho-salgada" id="g">
+                        <input type="radio" name="tamanho-salgada" id="g" value="g">
                         <label for="g">G R$94,90</label>
                     </div>
                     <div class="gg">
-                        <input type="radio" name="tamanho-salgada" id="gg">
+                        <input type="radio" name="tamanho-salgada" id="gg" value="gg">
                         <label for="gg">GG R$124,90</label>
                     </div>
                     <div class="none">
-                        <input type="radio" name="tamanho-salgada" id="none">
-                        <label for="none">não quero salgada</label>
+                        <input type="radio" name="tamanho-salgada" id="nenhuma" value="nenhuma">
+                        <label for="nenhuma">não quero salgada</label>
                     </div>
                 </div>
                 <div class="coluna2">
@@ -123,10 +123,11 @@
                         <h3>subtotal: </h3>
                         <p id="salgada-subtotal"></p>
                     </div>
-                        <a href="doce.html" class="btn-pedido" id="salgada-continuar">continuar</a>
+                        <a href="#" class="btn-pedido" id="salgada-continuar">continuar</a>
                 </div>
             </div>
         </div>
     </main>
+    <script src="salgada.js"></script>
 </body>
 </html>
