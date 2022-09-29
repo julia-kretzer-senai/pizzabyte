@@ -30,14 +30,14 @@ header a {
 
 #cardapio-header {
     margin-top: 1.5%;
-    position: fixed;
+    position: absolute;
     left: 0pt;
     top: 0pt;
 }
 
 #pedido-header {
     margin-top: 1.5%;
-    position: fixed;
+    position: absolute;
     right: 0pt;
     top: 0pt;
 }
@@ -250,17 +250,12 @@ header a {
         width: 50%;
     }
 
-/* salgada */
+/* salgada e doce */
 
-#main-salgada {
-    margin-top: 100%;
-    bottom: 0;
-}
-
-.title-salgada {
+.title-pedido {
     font-size: 312.5%;
     width: 100%;
-    margin: 2% 0;
+    margin: 2% 0 1% 0;
     text-align: center;
 }
 
@@ -275,11 +270,7 @@ header a {
     padding: 0 5%;
 }
 
-#pedido-salgada {
-    background-color: #ffa500;
-}
-
-#pedido-salgada h2 {
+.pedido-bg h2 {
     width: 100%;
     font-size: 300%;
     font-weight: 600;
@@ -289,10 +280,10 @@ header a {
 .opcoes {
     width: 100%;
     display: flex;
-    padding-bottom: 3%;
+    padding-bottom: 2%;
 }
 
-.opcoes h3 {
+.pedido-bg h3 {
     text-align: start;
     margin: 0;
     font-weight: 600;
@@ -336,39 +327,191 @@ header a {
     margin-bottom: 2%;
 }
 
-.borda label {
-    margin-right: 60%;
+#nao {
+    margin-top: 5%;
 }
 
 .subtotal {
     display: inline;
-    margin: 3.5% 0 15% 0;
+    margin: 7.5% 0 10% 0;
 }
 
-.continuar-btn a {
-    background-color:#e12c2c;
-    border: solid 3px #a70b0b;
+.btn-pedido {
     border-radius: 5px;
-    color: white;
     text-decoration: none;
     text-align: center;
-    padding: 1.5% 7.5%;
-    margin: 0 0 0 35%;
+    padding: 2.5% 7.5%;
     font-weight: 600;
+    width: 40%;
+}
+
+/* salgada */
+
+#pedido-salgada {
+    background-color: #ffa500;
+}
+
+#salgada-continuar {
+    margin: 0 0 0 30%;
+    background-color:#e12c2c;
+    border: solid 3px #a70b0b;
+    color: white;
+}
+
+/* doce */
+
+#pedido-doce {
+    background-color: #e12c2c;
+}
+
+#btn-pedido-container {
+    display: flex;
+}
+
+#doce-voltar {
+    margin: 0 5% 0 15%;
+    background-color: #ffa500;
+    border: solid 3px #ffa500;
+    color: white;
+}
+
+#doce-continuar {
+    background-color: #ffdf00;
+    border: solid 3px #ffa500;
+    color: black;
+}
+
+/* bebida */
+
+#pedido-bebida {
+    width: 84%;
+    background-color: #a70b0b;
+    margin: 0 3%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0 5%;
+}
+
+#pedido-bebida h2 {
+    width: 100%;
+    font-size: 300%;
+    font-weight: 600;
+    margin: 2% 0 0 0;
+}
+
+.conteudo-bebida {
+    width: 100%;
+    display: flex;
+}
+
+.soft, .alcoolica, .subtotal-bebida {
+    width: 100%;
+    height: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2%;
+}
+
+.soft h3, .alcoolica h3, .subtotal-bebida-container {
+    font-size: 200%;
+    font-weight: 600;
+    width: 100%;
+    text-align: start;
+    margin-bottom: 1%;
+}
+
+.selecoes-bebida {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.soft select, .alcoolica select {
+    width: 25%;
+    height: 30px;
+    margin-right: 5%;
+    background-color: #f2f2f2;
+    color: #979797;
+    border-radius: 5px;
+}
+
+.soft input, .alcoolica input {
+    margin-right: 1%;
+}
+
+.soft label, .alcoolica label {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 0.5%;
+    font-weight: 400;
+    font-size: 150%;
+    width: 18%;
+    margin-right: 2%;
+}
+
+.espaco {
+    width: 10%;
+}
+
+.subtotal-bebida {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    /* flex-wrap: nowrap; */
+}
+
+.subtotal-bebida-container {
+    width: 20%;
+    display: flex;
+    padding-left: 25%;
+}
+
+#bebida-subtotal {
+    margin-left: 5%;
+}
+
+#btn-pedido-container-bebida {
+    width: 30%;
+    height: 20%;
+    padding-left: 7%;
+}
+
+.btn-bebida {
+    text-decoration: none;
+    font-size: 150%;
+    background-color: #ffa500;
+    border: solid 3px #ffa500;
+    border-radius: 5px;
+    color: #f2f2f2;
+    font-weight: 600;
+    padding: 2.5% 7.5%;
+    margin: 4% 3%;
+}
+
+/* border-radius: 5px;
+text-decoration: none;
+text-align: center;
+padding: 2.5% 7.5%;
+font-weight: 600;
+width: 40%; */
+
+#bebida-continuar {
+    background-color: #ffdf00;
+    color: #000;
 }
 
 /* dados */
 
-#main-dados {
-    padding-top: 11%;
-}
-
 #dados {
     color: black;
     width: 630px;
-    aspect-ratio: 2/1;
     background-color: #ffdf00;
-    margin: auto;
+    margin: 3% auto;
     display: flex;
     flex-wrap: wrap;
     border-radius: 5px;
@@ -380,7 +523,7 @@ header a {
     font-size: 250%;
     width: 100%;
     height: 10%;
-    margin: 2% 0 5% 0;
+    margin: 2% 0 2% 0;
     text-align: center;
 }
 
@@ -391,16 +534,17 @@ form {
 }
 
 .labels {
-    width: 30%;
+    width: 29%;
     display: flex;
     flex-direction: column;
     text-align: end;
     font-size: 150%;
-    padding-right: 5%;
+    padding-right: 2%;
+    font-weight: 600;
 }
 
 .labels label {
-    margin: 10% 0;
+    margin: 10.3% 0;
 }
 
 .inputs {
@@ -415,21 +559,188 @@ form {
     height: 30px;
     margin: 4.8% 0;
     border: none;
+    border-radius: 3px;
 }
 
 .inputs input::placeholder {
     font-family: 'Anaheim';
 }
 
-.continuar-btn {
+.btn-dados-container {
+    display: flex;
+    width: 100%;
+}
+
+.dados-btn {
     color: #f2f2f2;
     background-color: #e12c2c;
     border: #a70b0b 3px solid;
+    border-radius: 5px;
     font-family: 'Source Sans Pro';
     font-weight: 600;
     font-size: 180%;
     width: 25%;
-    height: 64px;
-    margin: 1.9% 37.5% 0 37.5%;
+    margin: 1.9% 0 2% 0;
     cursor: pointer;
+    text-decoration: none;
+    padding: 2% 3%;
+    text-align: center;
+}
+
+#voltar-btn {
+    width: 15%;
+    background-color: #a70b0b;
+    margin: auto 5% auto 22.5%;
+} 
+
+/* confirma */
+
+#confirma-bg {
+    width: 90%;
+    margin: 4% 5% 0 5%;
+    display: flex;
+}   
+
+.confirma-produto {
+    padding: 1% 2%;
+    width: 33%;
+    font-size: 150%;
+}
+
+#confirma-salgada {
+    background-color: #ffa500;
+    border-radius: 5px 0 0 0;
+}
+
+#confirma-doce {
+    background-color: #e12c2c;
+}
+
+#confirma-bebida {
+    background-color: #a70b0b;
+    border-radius: 0 5px 0 0;
+}
+
+.title-categoria {
+    font-size: 200%;
+    margin-bottom: 2%;
+    font-weight: 600;
+    text-align: center;
+}
+
+.confirma-produto h3 {
+    font-weight: 600;
+}
+
+.confirma-tamanho, .confirma-sabor, .confirma-borda {
+    display: flex;
+}
+
+.confirma-margem {
+    margin-left: 5%;
+}
+
+.confirma-subtotal {
+    text-align: center;
+    font-weight: 600;
+    font-size: 150%;
+    margin-top: 2%;
+}
+
+.confirma-dados {
+    width: 90%;
+    padding: 2% 0;
+    background-color: #ffdf00;
+    color: #000;
+    font-weight: 600;
+    border-radius: 0 0 5px 5px;
+    margin: 0 5% 0 5%;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 120%;
+}
+
+.tamanho-bebida {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+.tamanho-bebida p {
+    margin-left: 5%;
+}
+
+#confirma-subtotal-bebida {
+    margin-top: 10.5%;
+}
+
+.abaixo {
+    width: 90%;
+    margin: 3% 5% 0 5%;
+    display: flex;
+    text-align: center;
+}
+
+.entrega, .btn-confirma-container {
+    width: 33%;
+}
+
+.entrega label {
+    font-size: 200%;
+}
+
+.retirada {
+    margin-left: 8%;
+}
+
+.total {
+    width: 17.5%;
+    padding: 0 7.75% 0 7.75%;
+    display: flex;
+    font-weight: 600;
+    font-size: 200%;
+}
+
+#total {
+    margin-left: 5%;
+    padding-right: 0;
+}
+
+.btn-confirma {
+    text-align: center;
+    text-decoration: none;
+    color: #f2f2f2;
+    border: #a70b0b 3px solid;
+    border-radius: 5px;
+    padding: 2% 7.5%;
+    font-size: 180%;
+    margin-left: 3%;
+    background-color: #a70b0b;
+    font-weight: 600;
+}
+
+#finalizar {
+    background-color: #e12c2c;
+}
+
+/* final */
+
+#main-final {
+    width: 100%;
+    text-align: center;
+    font-size: 200%;
+}
+
+#main-final h1 {
+    font-size: 230%;
+    font-weight: 600;
+    margin: 2% 0 3% 0;
+}
+
+#main-final h3 {
+    margin: 1% 0 0 0;
+}
+
+#logo-final {
+    margin-top: 2%;
+    width: 20%;
 }
