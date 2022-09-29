@@ -13,7 +13,6 @@ body {
 
 header {
     width: 100%;
-    /* height: 100px; */
     text-align: center;
     padding-top: 30px;
     position: asbolute;
@@ -218,37 +217,37 @@ header a {
 
 /* dados */
 
-    #main-dados {
-        padding-top: 10%;
-        color: black;
-        width: 50%;
-        aspect-ratio: 2/1;
-        background-color: #ffdf00;
-        margin: auto;
-        display: flex;
-        flex-wrap: wrap;
-    }
+#main-dados {
+    padding-top: 10%;
+    color: black;
+    width: 50%;
+    aspect-ratio: 2/1;
+    background-color: #ffdf00;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
 
-    #main-dados h2 {
-        font-family: 'Source Sans Pro';
-        font-weight: 600;
-        font-size: 250%;
-        width: 100%;
-        height: 10%;
-        margin: 2% 0 5% 0;
-        text-align: center;
-    }
+#main-dados h2 {
+    font-family: 'Source Sans Pro';
+    font-weight: 600;
+    font-size: 250%;
+    width: 100%;
+    height: 10%;
+    margin: 2% 0 5% 0;
+    text-align: center;
+}
 
-    .labels {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        text-align: end;
-    }
+.labels {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
 
-    .inputs {
-        width: 50%;
-    }
+.inputs {
+    width: 50%;
+}
 
 /* salgada e doce */
 
@@ -462,7 +461,6 @@ header a {
     display: flex;
     flex-direction: row;
     margin-top: 5%;
-    /* flex-wrap: nowrap; */
 }
 
 .subtotal-bebida-container {
@@ -492,13 +490,6 @@ header a {
     padding: 2.5% 7.5%;
     margin: 4% 3%;
 }
-
-/* border-radius: 5px;
-text-decoration: none;
-text-align: center;
-padding: 2.5% 7.5%;
-font-weight: 600;
-width: 40%; */
 
 #bebida-continuar {
     background-color: #ffdf00;
@@ -724,6 +715,10 @@ form {
 
 /* final */
 
+.final-html {
+padding: 6.5%;
+}
+
 #main-final {
     width: 100%;
     text-align: center;
@@ -733,7 +728,7 @@ form {
 #main-final h1 {
     font-size: 230%;
     font-weight: 600;
-    margin: 2% 0 3% 0;
+    margin-bottom: 3%;
 }
 
 #main-final h3 {
@@ -741,6 +736,5 @@ form {
 }
 
 #logo-final {
-    margin-top: 2%;
-    width: 20%;
+    width: 23%;
 }
