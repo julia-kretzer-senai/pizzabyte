@@ -26,25 +26,21 @@
             <div class="opcoes">
             <div class="coluna1">
                 <h3>tamanho:</h3>
-                <div class="p">
-                    <input type="radio" name="tamanho-doce" id="p">
-                    <label for="p">P R$44,90</label>
-                </div>
-                <div class="m">
-                    <input type="radio" name="tamanho-doce" id="m">
-                    <label for="m">M R$74,90</label>
-                </div>
-                <div class="g">
-                    <input type="radio" name="tamanho-doce" id="g">
-                    <label for="g">G R$94,90</label>
-                </div>
-                <div class="gg">
-                    <input type="radio" name="tamanho-doce" id="gg">
-                    <label for="gg">GG R$124,90</label>
-                </div>
-                <div class="none">
-                    <input type="radio" name="tamanho-doce" id="none">
-                    <label for="none">não quero doce</label>
+                <select name="tamanho-doce" id="tamanho-doce" required>
+                    <option value="default" disabled selected>selecione o tamanho</option>
+                    <option value="p">P R$44,90</option>
+                    <option value="m">M R$74,90</option>
+                    <option value="g">G R$94,90</option>
+                    <option value="gg">GG R$124,90</option>
+                    <option value="nenhuma">não quero pizza salgada</option>
+                </select>
+                <div class="borda">
+                    <h3>borda recheada?</h3>
+                    <input type="radio" id="sim" name="borda">
+                    <label for="sim">sim R$9,90</label><br>
+
+                    <input type="radio" id="nao" name="borda">
+                    <label for="nao">não</label>
                 </div>
             </div>
             <div class="coluna2">
@@ -87,14 +83,6 @@
                 </select>
             </div>
             <div class="coluna3">
-                <div class="borda">
-                    <h3>borda recheada?</h3>
-                    <input type="radio" id="sim" name="borda">
-                    <label for="sim">sim R$9,90</label><br>
-
-                    <input type="radio" id="nao" name="borda">
-                    <label for="nao">não</label>
-                </div>
                 <div class="subtotal">
                     <h3>subtotal: </h3>
                     <p id="doce-subtotal"></p>
