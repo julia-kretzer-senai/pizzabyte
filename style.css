@@ -274,6 +274,7 @@ header a {
     font-size: 300%;
     font-weight: 600;
     margin: 2% 0;
+    color: #070024;
 }
 
 .opcoes {
@@ -290,12 +291,14 @@ header a {
 }
 
 .coluna1, .coluna2, .coluna3 {
+    color: #070024;
     width: 33%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: start;
     font-size: 150%;
+    font-weight: 600;
 }   
 
 .coluna2 {
@@ -371,6 +374,10 @@ header a {
     background-color: #e12c2c;
 }
 
+#pedido-doce h2, #pedido-doce h3, #pedido-doce .coluna1, #pedido-doce .coluna3 {
+    color: #f2f2f2;
+}
+
 #btn-pedido-container {
     display: flex;
 }
@@ -379,13 +386,13 @@ header a {
     margin: 0 5% 0 15%;
     background-color: #ffa500;
     border: solid 3px #ffa500;
-    color: white;
+    color: #070024;
 }
 
 #doce-continuar {
     background-color: #ffdf00;
     border: solid 3px #ffa500;
-    color: black;
+    color: #070024;
 }
 
 /* bebida */
@@ -493,7 +500,7 @@ header a {
     background-color: #ffa500;
     border: solid 3px #ffa500;
     border-radius: 5px;
-    color: #f2f2f2;
+    color: #070024;
     font-weight: 600;
     padding: 2.5% 7.5%;
     margin: 4% 3%;
@@ -501,7 +508,7 @@ header a {
 
 #bebida-continuar {
     background-color: #ffdf00;
-    color: #000;
+    color: #070024;
 }
 
 /* dados */
