@@ -167,7 +167,6 @@ tamanhoSalgada?.addEventListener('change', function(e) {
 
     if (tamanhoSalgada.value == 'p') {
         sabor1.disabled = false;
-        // sabor1.required = true;
         sabor2.disabled = true;
         sabor3.disabled = true;
         sabor4.disabled = true;
@@ -219,7 +218,7 @@ bordaSalgadaSim?.addEventListener('change', function(e) {
 
     let a = 0;
     i = 0;
-    a = 9.9
+    a = 9.9;
 
     totalSalgada += a;
 
@@ -247,6 +246,7 @@ btnSalgada?.addEventListener('click', function(e) {
     e.preventDefault();
 
     j = 0;
+    k = 0;
 
     // evitar repeticao
     
@@ -272,6 +272,7 @@ btnSalgada?.addEventListener('click', function(e) {
 
     if (tamanhoSalgada.value == '') {
         alert("Selecione o tamanho");
+        j = 1;
     } else if (tamanhoSalgada.value == 'p') {
         totalSalgada += 44.9;
         proximaPaginaTamanhoSalgada = 1;
@@ -293,21 +294,36 @@ btnSalgada?.addEventListener('click', function(e) {
     // verificacao para continuar
 
     if (tamanhoSalgada.value != 'nenhuma') {
-        if (sabor1escolhido == 'sabor 1') {
+        k = 0;
+        if (sabor1escolhido == 'sabor 1' && j != 1 && k == 0) {
             alert('Selecione o sabor');
-        } else if (sabor1escolhido != 'sabor 1'){
+            k = 1;
+        } else if (sabor1escolhido != 'sabor 1' && tamanhoSalgada.value == 'p'){
             proximaPaginaSaborSalgada = 1;
         }
-        if (sabor2escolhido == 'sabor 2' && tamanhoSalgada.value != 'p') {
+        if (sabor2escolhido == 'sabor 2' && tamanhoSalgada.value != 'p' && j != 1 && k == 0) {
             alert('Selecione o sabor');
-        } else if (tamanhoSalgada.value == 'p') {
+            k = 1;
+        } else if (sabor2escolhido != 'sabor 2' && sabor1escolhido != 'sabor 1' && tamanhoSalgada.value == 'm') {
+            proximaPaginaSaborSalgada = 1;
+        }
+        if (sabor3escolhido == 'sabor 3' && tamanhoSalgada.value != 'm' && tamanhoSalgada.value != 'p' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor3escolhido != 'sabor 3' && sabor1escolhido != 'sabor 1' && sabor2escolhido != 'sabor 2' && tamanhoSalgada.value == 'g') {
+            proximaPaginaSaborSalgada = 1;
+        } 
+        if (sabor4escolhido == 'sabor 4' && tamanhoSalgada.value != 'm' && tamanhoSalgada.value != 'p' && tamanhoSalgada.value != 'g' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor4escolhido != 'sabor 4' && sabor3escolhido != 'sabor 3' && sabor1escolhido != 'sabor 1' && sabor2escolhido != 'sabor 2' && tamanhoSalgada.value == 'gg') {
             proximaPaginaSaborSalgada = 1;
         }
     }
 
     // valores para armazenar
 
-    if (bordaSalgada == null && tamanhoSalgada.value != 'nenhuma') {
+    if (bordaSalgada == null && tamanhoSalgada.value != 'nenhuma' && j != 1) {
         alert("Selecione a borda");
     } else if (bordaSalgada == null && tamanhoSalgada.value != ''){
         proximaPaginaBordaSalgada = 1;
@@ -332,5 +348,231 @@ btnSalgada?.addEventListener('click', function(e) {
 
     if (proximaPaginaTamanhoSalgada == 1 && proximaPaginaBordaSalgada == 1 && proximaPaginaSaborSalgada == 1) {
         window.open('doce.html', '_self');
+    }
+})
+
+// DOCE
+
+let totalDoce = 0;
+let proximaPaginaTamanhoDoce, proximaPaginaBordaDoce, proximaPaginaSaborDoce;
+
+// botao
+
+btnDoce = document.querySelector("#doce-continuar");
+
+// variaveis
+
+let tamanhoDoce = document.querySelector("#tamanho-doce");
+let sabor1doce = document.querySelector("#sabor1");
+let sabor2doce = document.querySelector("#sabor2");
+let sabor3doce = document.querySelector("#sabor3");
+let sabor4doce = document.querySelector("#sabor4");
+let bordaDoceSim = document.querySelector("#doce-sim");
+let bordaDoceNao = document.querySelector("#doce-nao");
+let subtotalDoce = document.getElementById("doce-subtotal");
+let paginaDoce = document.querySelector("#doce");
+
+// funcao disable
+
+function imprimirDoce() {
+    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); ;
+}
+let idoce, jdoce;
+
+tamanhoDoce?.addEventListener('change', function(e) {
+    
+    totalDoce = 0;
+    i = 0;
+    bordaDoceSim.checked = false;
+    bordaDoceNao.checked = false;
+
+
+    if (bordaDoceSim.checked == true) {
+        totalDoce += 9.9;
+    }
+
+    if (tamanhoDoce.value == 'p') {
+        sabor1doce.disabled = false;
+        sabor2doce.disabled = true;
+        sabor3doce.disabled = true;
+        sabor4doce.disabled = true;
+        bordaDoceSim.disabled = false;
+        bordaDoceNao.disabled = false;
+        totalDoce = 44.9;
+    } else if (tamanhoDoce.value == 'm') {
+        sabor1doce.disabled = false;
+        sabor2doce.disabled = false;
+        sabor3doce.disabled = true;
+        sabor4doce.disabled = true;
+        bordaDoceSim.disabled = false;
+        bordaDoceNao.disabled = false;
+        totalDoce = 74.9;
+    } else if (tamanhoDoce.value == 'g') {
+        sabor1doce.disabled = false;
+        sabor2doce.disabled = false;
+        sabor3doce.disabled = false;
+        sabor4doce.disabled = true;
+        bordaDoceSim.disabled = false;
+        bordaDoceNao.disabled = false;
+        totalDoce = 94.9;
+    } else if (tamanhoDoce.value == 'gg') {
+        sabor1doce.disabled = false;
+        sabor2doce.disabled = false;
+        sabor3doce.disabled = false;
+        sabor4doce.disabled = false;
+        bordaDoceSim.disabled = false;
+        bordaDoceNao.disabled = false;
+        totalDoce = 124.9;
+    } else {
+        sabor1doce.disabled = true;
+        sabor2doce.disabled = true;
+        sabor3doce.disabled = true;
+        sabor4doce.disabled = true;
+        bordaDoceSim.disabled = true;
+        bordaDoceNao.disabled = true;
+        totalDoce = 0;
+    }
+
+    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+
+})
+
+// funcao mudar subtotal
+
+bordaDoceSim?.addEventListener('change', function(e) {
+    e.preventDefault();
+
+    let a = 0;
+    i = 0;
+    a = 9.9;
+
+    totalDoce += a;
+
+    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+    i++;
+})
+
+bordaDoceNao?.addEventListener('change', function(e) {
+    e.preventDefault();
+
+    let a = 0;
+    a = 9.9
+
+    if (i > 0) {
+        totalDoce -= a;
+    }
+
+    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+})
+
+// funcao principal
+
+btnDoce?.addEventListener('click', function(e) {
+
+    e.preventDefault();
+
+    j = 0;
+    k = 0;
+
+    // evitar repeticao
+    
+    totalDoce = 0;
+
+    // selects
+
+    let sabor1escolhido = sabor1doce.options[sabor1doce.selectedIndex].text;
+    let sabor2escolhido = sabor2doce.options[sabor2doce.selectedIndex].text;
+    let sabor3escolhido = sabor3doce.options[sabor3doce.selectedIndex].text;
+    let sabor4escolhido = sabor4doce.options[sabor4doce.selectedIndex].text;
+    let tamanhoDoceEscolhido = tamanhoDoce.options[tamanhoDoce.selectedIndex].value.toUpperCase();
+
+    // radio
+
+    let bordaDoce = document.querySelector('input[name="borda"]:checked');
+    
+    // variavel vazia
+
+    let bordaDoceEscolhida = '';
+
+    // somar ao total
+
+    if (tamanhoDoce.value == '') {
+        alert("Selecione o tamanho");
+        j = 1;
+    } else if (tamanhoDoce.value == 'p') {
+        totalDoce += 44.9;
+        proximaPaginaTamanhoDoce = 1;
+    } else if (tamanhoDoce.value == 'm') {
+        totalDoce += 74.9;
+        proximaPaginaTamanhoDoce = 1;
+    } else if (tamanhoDoce.value == 'g') {
+        totalDoce += 94.9; 
+        proximaPaginaTamanhoDoce = 1;
+    } else if (tamanhoDoce.value == 'gg') {
+        totalDoce += 124.9;
+        proximaPaginaTamanhoDoce = 1;
+    } else if (tamanhoDoce.value == 'nenhuma'){
+        proximaPaginaTamanhoDoce = 1;
+        proximaPaginaSaborDoce = 1;
+        proximaPaginaBordaDoce = 1;
+    }
+
+    // verificacao para continuar
+
+    if (tamanhoDoce.value != 'nenhuma') {
+        k = 0;
+        if (sabor1escolhido == 'sabor 1' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor1escolhido != 'sabor 1' && tamanhoDoce.value == 'p'){
+            proximaPaginaSaborDoce = 1;
+        }
+        if (sabor2escolhido == 'sabor 2' && tamanhoDoce.value != 'p' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor2escolhido != 'sabor 2' && sabor1escolhido != 'sabor 1' && tamanhoDoce.value == 'm') {
+            proximaPaginaSaborDoce = 1;
+        }
+        if (sabor3escolhido == 'sabor 3' && tamanhoDoce.value != 'm' && tamanhoDoce.value != 'p' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor3escolhido != 'sabor 3' && sabor1escolhido != 'sabor 1' && sabor2escolhido != 'sabor 2' && tamanhoDoce.value == 'g') {
+            proximaPaginaSaborDoce = 1;
+        } 
+        if (sabor4escolhido == 'sabor 4' && tamanhoDoce.value != 'm' && tamanhoDoce.value != 'p' && tamanhoDoce.value != 'g' && j != 1 && k == 0) {
+            alert('Selecione o sabor');
+            k = 1;
+        } else if (sabor4escolhido != 'sabor 4' && sabor3escolhido != 'sabor 3' && sabor1escolhido != 'sabor 1' && sabor2escolhido != 'sabor 2' && tamanhoDoce.value == 'gg') {
+            proximaPaginaSaborDoce = 1;
+        }
+    }
+
+    // valores para armazenar
+
+    if (bordaDoce == null && tamanhoDoce.value != 'nenhuma' && j != 1) {
+        alert("Selecione a borda");
+    } else if (bordaDoce == null && tamanhoDoce.value != ''){
+        proximaPaginaBordaDoce = 1;
+    } else if (bordaDoce.value == 'sim') {
+        bordaDoceEscolhida = 'sim';
+        totalDoce += 9.9;
+        proximaPaginaBordaDoce = 1;
+    } else if (bordaDoce.value == 'nao') {
+        bordaDoceEscolhida = 'não';
+        proximaPaginaBordaDoce = 1;
+    } 
+
+    // armazenar
+
+    localStorage.setItem("sabor-1-doce", sabor1escolhido);
+    localStorage.setItem("sabor-2-doce", sabor2escolhido);
+    localStorage.setItem("sabor-3-doce", sabor3escolhido);
+    localStorage.setItem("sabor-4-doce", sabor4escolhido);
+    localStorage.setItem("total-doce", totalDoce);
+    localStorage.setItem("tamanho-doce", tamanhoDoceEscolhido);
+    localStorage.setItem("borda-doce", bordaDoceEscolhida);
+
+    if (proximaPaginaTamanhoDoce == 1 && proximaPaginaBordaDoce == 1 && proximaPaginaSaborDoce == 1) {
+        window.open('bebida.html', '_self');
     }
 })
