@@ -9,7 +9,7 @@
     <title>PizzaByte | Bebida</title>
     <link rel="icon" type="image/x-icon" href="/img/pizza.ico">
 </head>
-<body>
+<body onload="imprimirBebida()">
     <header>
         <nav>
             <a href="cardapio.html" class="nav-btn" id="cardapio-header">cardápio</a>
@@ -29,19 +29,19 @@
                     <div class="selecoes-bebida">
                         <select name="soft" id="soft">
                             <option value="soft drink" disabled selected>soft drink</option>
-                            <option value="nenhuma">não quero soft drinks</option>
                             <option value="pepsi">pepsi</option>
                             <option value="pepsi-zero">pepsi zero</option>
                             <option value="gurana">guaraná</option>
                             <option value="fanta">fanta laranja</option>
                             <option value="agua">água sem gás</option>
                             <option value="agua-gas">água com gás</option>
+                            <option value="nenhuma">não quero soft drinks</option>
                         </select>
-                        <input type="radio" value="2" name="tamanho-soft" id="tamanho1">
+                        <input type="radio" value="2" name="tamanho-soft" id="tamanho1" disabled>
                         <label for="2l">2L <div class="espaco"> </div> R$12,90</label>
-                        <input type="radio" value="600" name="tamanho-soft" id="tamanho2">
+                        <input type="radio" value="600" name="tamanho-soft" id="tamanho2" disabled>
                         <label for="600">600mL <div class="espaco"> </div> R$8,90</label>
-                        <input type="radio" value="lata" name="tamanho-soft" id="tamanho3">
+                        <input type="radio" value="lata" name="tamanho-soft" id="tamanho3" disabled>
                         <label for="lata">lata <div class="espaco"> </div> R$5,90</label>
                     </div>
                 </div>
@@ -50,12 +50,12 @@
                     <div class="selecoes-bebida">
                         <select name="alcoolica" id="alcoolica" id="select-alcoolica">
                             <option value="alcoolica"disabled selected>alcoólica</option>
-                            <option value="nenhuma">não quero bebida alcoólica</option>
                             <option value="cerveja">cerveja</option>
                             <option value="ice">smirnoff ice</option>
                             <option value="beats">skol beats</option>
+                            <option value="nenhuma">não quero bebida alcoólica</option>
                         </select>
-                        <input type="radio" value="long" name="tamanho-alcoolica" id="tamanho4">
+                        <input type="radio" value="long" name="tamanho-alcoolica" id="tamanho4" disabled>
                         <label for="long">long neck <div class="espaco"> </div> R$11,90</label>
                     </div>
                 </div>
