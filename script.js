@@ -2,128 +2,6 @@
 
 let total;
 
-//  BEBIDA
-
-// botao
-
-let bebidaBtn = document.querySelector("#bebida-continuar");
-
-// variaveis
-
-let soft = document.querySelector("#soft");
-let alcoolica = document.querySelector("#alcoolica");
-
-// funcoes disable
-
-soft?.addEventListener("change", function(e) {
-    e.preventDefault();
-
-    let tamanho1 = document.querySelector("#tamanho1");
-    let tamanho2 = document.querySelector("#tamanho2");
-    let tamanho3 = document.querySelector("#tamanho3");
-
-    if (soft.options[soft.selectedIndex].value == "nenhuma") {
-        tamanho1.disabled = true;
-        tamanho2.disabled = true;
-        tamanho3.disabled = true;
-    } else {
-        tamanho1.disabled = false;
-        tamanho2.disabled = false;
-        tamanho3.disabled = false;
-    }
-});
-
-alcoolica?.addEventListener("change", function(e) {
-    e.preventDefault();
-
-    let tamanho4 = document.querySelector("#tamanho4");
-
-    if (alcoolica.options[alcoolica.selectedIndex].value == "nenhuma") {
-        tamanho4.disabled = true;
-    } else {
-        tamanho4.disabled = false;
-    }
-});
-
-// funcao principal
-
-bebidaBtn?.addEventListener("click", function(e) {
-    e.preventDefault();
-
-    // puxando valores quando o botao é clicado
-
-    // selects
-    let softEscolhida = soft.options[soft.selectedIndex].text;
-    let alcoolicaEscolhida = alcoolica.options[alcoolica.selectedIndex];
-
-    // radios
-    let tamanhoSoft = document.querySelector('input[name="tamanho-soft"]:checked');
-    let tamanhoAlcoolica = document.querySelector('input[name="tamanho-alcoolica"]:checked');
-
-    // variaveis vazias
-
-    let tamanhoSoftEscolhido = "";
-    let tamanhoAlcoolicaEscolhido = "";
-    let bebidaAlcoolicaEscolhida = "";
-    let proximaPaginaSoft = "";
-    let proximaPaginaAlcoolica = "";
-    let alerta = "";
-
-    // definindo como salvar cada valor
-
-    // soft
-
-    if (tamanhoSoft == null) {
-        alert("Selecione o tamanho da bebida");
-        alerta = 1;
-    } else if (tamanhoSoft.value =="600") {
-        tamanhoSoftEscolhido = "600mL";
-        proximaPaginaSoft = 1;
-    } else if (tamanhoSoft.value == "lata") {
-        tamanhoSoftEscolhido = "lata";
-        proximaPaginaSoft = 1;
-    } else if (tamanhoSoft.value == "2") {
-        tamanhoSoftEscolhido = "2L";
-        proximaPaginaSoft = 1;
-    } 
-
-    // alcoolica
-
-    if (alcoolicaEscolhida.value == "cerveja") {
-        bebidaAlcoolicaEscolhida = "cerveja";
-    } else if (alcoolicaEscolhida.value == "ice") {
-        bebidaAlcoolicaEscolhida = "smirnoff ice";
-    } else if (alcoolicaEscolhida.value == "beats") {
-        bebidaAlcoolicaEscolhida = "skol beats";
-    }
-
-    if (tamanhoAlcoolica == null) {
-        if (alerta != 1) {
-            alert("Selecione o tamanho da bebida");
-        }
-    } else if (tamanhoAlcoolica.value == "long") {
-        tamanhoAlcoolicaEscolhido = "long neck";
-        proximaPaginaAlcoolica = 1;
-    }
-
-    // armazenando selecoes no local storage
-
-    console.log(softEscolhida);
-    console.log(tamanhoSoftEscolhido);
-    console.log(bebidaAlcoolicaEscolhida);
-    console.log(tamanhoAlcoolicaEscolhido);
-
-    localStorage.setItem("soft", softEscolhida);
-    localStorage.setItem("tamanhoSoft", tamanhoSoftEscolhido);
-    localStorage.setItem("alcoolica", bebidaAlcoolicaEscolhida);
-    localStorage.setItem("tamanhoAlcoolica", tamanhoAlcoolicaEscolhido);
-
-    // definindo quando vai para a pagina seguinte
-
-    if (proximaPaginaSoft == 1 && proximaPaginaAlcoolica == 1) {
-    window.open("dados.html", "_self");
-    }
-})
 
 // SALGADA
 
@@ -149,7 +27,7 @@ let paginaSalgada = document.querySelector("#salgada");
 // funcao disable
 
 function imprimirSalgada() {
-    subtotalSalgada.innerHTML = totalSalgada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); ;
+    subtotalSalgada.innerHTML = totalSalgada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 let i, j;
 
@@ -162,7 +40,7 @@ tamanhoSalgada?.addEventListener('change', function(e) {
 
 
     if (bordaSalgadaSim.checked == true) {
-        totalSalgada += 9.9;
+        totalSalgada += 9.90;
     }
 
     if (tamanhoSalgada.value == 'p') {
@@ -208,7 +86,6 @@ tamanhoSalgada?.addEventListener('change', function(e) {
     }
 
     subtotalSalgada.innerHTML = totalSalgada.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
-
 })
 
 // funcao mudar subtotal
@@ -218,7 +95,7 @@ bordaSalgadaSim?.addEventListener('change', function(e) {
 
     let a = 0;
     i = 0;
-    a = 9.9;
+    a = 9.90;
 
     totalSalgada += a;
 
@@ -230,7 +107,7 @@ bordaSalgadaNao?.addEventListener('change', function(e) {
     e.preventDefault();
 
     let a = 0;
-    a = 9.9
+    a = 9.90;
 
     if (i > 0) {
         totalSalgada -= a;
@@ -329,7 +206,7 @@ btnSalgada?.addEventListener('click', function(e) {
         proximaPaginaBordaSalgada = 1;
     } else if (bordaSalgada.value == 'sim') {
         bordaSalgadaEscolhida = 'sim';
-        totalSalgada += 9.9;
+        totalSalgada += 9.90;
         proximaPaginaBordaSalgada = 1;
     } else if (bordaSalgada.value == 'nao') {
         bordaSalgadaEscolhida = 'não';
@@ -342,7 +219,7 @@ btnSalgada?.addEventListener('click', function(e) {
     localStorage.setItem("sabor-2-salgada", sabor2escolhido);
     localStorage.setItem("sabor-3-salgada", sabor3escolhido);
     localStorage.setItem("sabor-4-salgada", sabor4escolhido);
-    localStorage.setItem("total-salgada", totalSalgada);
+    localStorage.setItem("total-salgada", totalSalgada.toFixed(2));
     localStorage.setItem("tamanho-salgada", tamanhoSalgadaEscolhido);
     localStorage.setItem("borda-salgada", bordaSalgadaEscolhida);
 
@@ -375,8 +252,12 @@ let paginaDoce = document.querySelector("#doce");
 // funcao disable
 
 function imprimirDoce() {
-    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); ;
+    let totalSalgada = localStorage.getItem("total-salgada");
+    let totalSalgadaSomar = parseFloat(totalSalgada);
+    totalDoce += totalSalgadaSomar;
+    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
+
 let idoce, jdoce;
 
 tamanhoDoce?.addEventListener('change', function(e) {
@@ -388,7 +269,7 @@ tamanhoDoce?.addEventListener('change', function(e) {
 
 
     if (bordaDoceSim.checked == true) {
-        totalDoce += 9.9;
+        totalDoce += 9.90;
     }
 
     if (tamanhoDoce.value == 'p') {
@@ -433,7 +314,7 @@ tamanhoDoce?.addEventListener('change', function(e) {
         totalDoce = 0;
     }
 
-    subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+    imprimirDoce();
 
 })
 
@@ -444,11 +325,12 @@ bordaDoceSim?.addEventListener('change', function(e) {
 
     let a = 0;
     i = 0;
-    a = 9.9;
+    a = 9.90;
 
     totalDoce += a;
 
     subtotalDoce.innerHTML = totalDoce.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }); 
+
     i++;
 })
 
@@ -456,7 +338,7 @@ bordaDoceNao?.addEventListener('change', function(e) {
     e.preventDefault();
 
     let a = 0;
-    a = 9.9
+    a = 9.90
 
     if (i > 0) {
         totalDoce -= a;
@@ -555,7 +437,7 @@ btnDoce?.addEventListener('click', function(e) {
         proximaPaginaBordaDoce = 1;
     } else if (bordaDoce.value == 'sim') {
         bordaDoceEscolhida = 'sim';
-        totalDoce += 9.9;
+        totalDoce += 9.90;
         proximaPaginaBordaDoce = 1;
     } else if (bordaDoce.value == 'nao') {
         bordaDoceEscolhida = 'não';
@@ -568,11 +450,221 @@ btnDoce?.addEventListener('click', function(e) {
     localStorage.setItem("sabor-2-doce", sabor2escolhido);
     localStorage.setItem("sabor-3-doce", sabor3escolhido);
     localStorage.setItem("sabor-4-doce", sabor4escolhido);
-    localStorage.setItem("total-doce", totalDoce);
+    localStorage.setItem("total-doce", totalDoce.toFixed(2));
     localStorage.setItem("tamanho-doce", tamanhoDoceEscolhido);
     localStorage.setItem("borda-doce", bordaDoceEscolhida);
 
     if (proximaPaginaTamanhoDoce == 1 && proximaPaginaBordaDoce == 1 && proximaPaginaSaborDoce == 1) {
         window.open('bebida.html', '_self');
+    }
+})
+
+//  BEBIDA
+
+// botao
+
+let bebidaBtn = document.querySelector("#bebida-continuar");
+
+// variaveis
+
+let soft = document.querySelector("#soft");
+let alcoolica = document.querySelector("#alcoolica");
+let subtotalBebida = document.querySelector("#bebida-subtotal");
+let totalBebida = 0;
+let iAlcoolica = 0;
+let iSoft = 0;
+let tamanho1 = document.querySelector("#tamanho1");
+let tamanho2 = document.querySelector("#tamanho2");
+let tamanho3 = document.querySelector("#tamanho3");
+let tamanho4 = document.querySelector("#tamanho4");
+
+// funcao imprimir
+
+function imprimirBebida() {
+    let totalSalgada = localStorage.getItem("total-salgada");
+    let totalDoce = localStorage.getItem("total-doce");
+    let totalSalgadaSomar = parseFloat(totalSalgada);
+    let totalDoceSomar = parseFloat(totalDoce);
+    totalBebida += totalDoceSomar + totalSalgadaSomar;
+    subtotalBebida.innerHTML = totalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+// funcoes disable
+
+soft?.addEventListener("change", function(e) {
+    e.preventDefault();
+
+    if (soft.options[soft.selectedIndex].value == "nenhuma") {
+        tamanho1.disabled = true;
+        tamanho2.disabled = true;
+        tamanho3.disabled = true;
+        totalBebida = 0;
+        imprimirBebida();
+    } else {
+        tamanho1.disabled = false;
+        tamanho2.disabled = false;
+        tamanho3.disabled = false;
+    }
+
+    console.log(totalBebida);
+});
+
+alcoolica?.addEventListener("change", function(e) {
+    e.preventDefault();
+
+    if (alcoolica.options[alcoolica.selectedIndex].value == "nenhuma" && iAlcoolica > 0) {
+        tamanho4.disabled = true;
+        totalBebida -= 11.9;
+        iAlcoolica = 0;
+    } else if (alcoolica.options[alcoolica.selectedIndex].value == "nenhuma") {
+        tamanho4.disabled = true;
+    } else if (alcoolica.options[alcoolica.selectedIndex].value != "nenhuma" && iAlcoolica == 0) {
+        iAlcoolica = 0;
+        tamanho4.checked = true;
+        tamanho4.disabled = false;
+        totalBebida += 11.9;
+        iAlcoolica++;
+    }
+
+    console.log(totalBebida);
+
+    subtotalBebida.innerHTML = totalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+});
+
+tamanho1?.addEventListener("change", function(e) {
+    e.preventDefault();
+
+    if (tamanho1.checked == true && tamanho2.checked == false && tamanho3.checked == false && iSoft == 0) {
+        totalBebida += 12.9;
+        iSoft = 1;
+    } else if (tamanho1.checked == true && tamanho2.checked == false && tamanho3.checked == false && iSoft == 2) {
+        totalBebida += 12.9 - 8.9;
+        iSoft = 1;
+    } else if (tamanho1.checked == true && tamanho2.checked == false && tamanho3.checked == false && iSoft == 3) {
+        totalBebida += 12.9 - 5.9;
+        iSoft = 1;
+    }
+
+    subtotalBebida.innerHTML = totalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    console.log(totalBebida);
+});
+
+tamanho2?.addEventListener("change", function(e) {
+    e.preventDefault();
+
+    if (tamanho1.checked == false && tamanho2.checked == true && tamanho3.checked == false && iSoft == 0) {
+        totalBebida += 8.9;
+        iSoft = 2;
+    } else if (tamanho1.checked == false && tamanho2.checked == true && tamanho3.checked == false && iSoft == 1) {
+        totalBebida -= 4;
+        iSoft = 2;
+    } else if (tamanho1.checked == false && tamanho2.checked == true && tamanho3.checked == false && iSoft == 3) {
+        totalBebida += 3;
+        iSoft = 2;
+    }
+
+    subtotalBebida.innerHTML = totalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    console.log(totalBebida);
+});
+
+tamanho3?.addEventListener("change", function(e) {
+    e.preventDefault();
+
+    if (tamanho1.checked == false && tamanho2.checked == false && tamanho3.checked == true && iSoft == 0) {
+        totalBebida += 5.9;
+        iSoft = 3;
+    } else if (tamanho1.checked == false && tamanho2.checked == false && tamanho3.checked == true && iSoft == 1) {
+        totalBebida -= 7;
+        iSoft = 3;
+    } else if (tamanho1.checked == false && tamanho2.checked == false && tamanho3.checked == true && iSoft == 2) {
+        totalBebida -= 3;
+        iSoft = 3;
+    }
+
+    subtotalBebida.innerHTML = totalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+    console.log(totalBebida);
+});
+
+
+// funcao principal
+
+bebidaBtn?.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    // puxando valores quando o botao é clicado
+
+    // selects
+    let softEscolhida = soft.options[soft.selectedIndex].text;
+    let alcoolicaEscolhida = alcoolica.options[alcoolica.selectedIndex];
+
+    // radios
+    let tamanhoSoft = document.querySelector('input[name="tamanho-soft"]:checked');
+    let tamanhoAlcoolica = document.querySelector('input[name="tamanho-alcoolica"]:checked');
+
+    // variaveis vazias
+
+    let tamanhoSoftEscolhido = "";
+    let tamanhoAlcoolicaEscolhido = "";
+    let bebidaAlcoolicaEscolhida = "";
+    let proximaPaginaSoft = "";
+    let proximaPaginaAlcoolica = "";
+    let alerta = "";
+
+    // definindo como salvar cada valor
+
+    // soft
+
+    if (tamanhoSoft == null && softValue != "Nenhuma") {
+        alert("Selecione o tamanho da bebida");
+        alerta = 1;
+    } else if (tamanhoSoft.value =="600") {
+        tamanhoSoftEscolhido = "600mL";
+        proximaPaginaSoft = 1;
+    } else if (tamanhoSoft.value == "lata") {
+        tamanhoSoftEscolhido = "lata";
+        proximaPaginaSoft = 1;
+    } else if (tamanhoSoft.value == "2") {
+        tamanhoSoftEscolhido = "2L";
+        proximaPaginaSoft = 1;
+    } 
+
+    // alcoolica
+
+    if (alcoolicaEscolhida.value == "cerveja") {
+        bebidaAlcoolicaEscolhida = "cerveja";
+    } else if (alcoolicaEscolhida.value == "ice") {
+        bebidaAlcoolicaEscolhida = "smirnoff ice";
+    } else if (alcoolicaEscolhida.value == "beats") {
+        bebidaAlcoolicaEscolhida = "skol beats";
+    }
+
+    if (tamanhoAlcoolica == null) {
+        if (alerta != 1) {
+            alert("Selecione o tamanho da bebida");
+        }
+    } else if (tamanhoAlcoolica.value == "long") {
+        tamanhoAlcoolicaEscolhido = "long neck";
+        proximaPaginaAlcoolica = 1;
+    }
+
+    // armazenando selecoes no local storage
+
+    console.log(softEscolhida);
+    console.log(tamanhoSoftEscolhido);
+    console.log(bebidaAlcoolicaEscolhida);
+    console.log(tamanhoAlcoolicaEscolhido);
+
+    localStorage.setItem("soft", softEscolhida);
+    localStorage.setItem("tamanhoSoft", tamanhoSoftEscolhido);
+    localStorage.setItem("alcoolica", bebidaAlcoolicaEscolhida);
+    localStorage.setItem("tamanhoAlcoolica", tamanhoAlcoolicaEscolhido);
+
+    // definindo quando vai para a pagina seguinte
+
+    if (proximaPaginaSoft == 1 && proximaPaginaAlcoolica == 1) {
+    window.open("dados.html", "_self");
     }
 })
