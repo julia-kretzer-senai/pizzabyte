@@ -407,6 +407,7 @@ header a {
     border-radius: 5px;
     text-align: center;
     padding: 0 5%;
+    padding-bottom: 3%;
 }
 
 #pedido-bebida h2 {
@@ -444,13 +445,16 @@ header a {
     flex-wrap: wrap;
 }
 
-.soft select, .alcoolica select {
-    width: 25%;
-    height: 30px;
-    margin-right: 5%;
+.selecoes-bebida select {
+    margin: 5px 10px 5px 0;
+    width: 30%;
+    aspect-ratio: 10/1;
+    border: none;
+    border-radius: 5px;
     background-color: #f2f2f2;
     color: #979797;
-    border-radius: 5px;
+    font-family: 'Source Sans Pro';
+    font-size: 100%;
 }
 
 .soft input, .alcoolica input {
@@ -460,11 +464,10 @@ header a {
 .soft label, .alcoolica label {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 0.5%;
+    padding-top: 1%;
     font-weight: 400;
     font-size: 150%;
     width: 18%;
-    margin-right: 2%;
 }
 
 .espaco {
