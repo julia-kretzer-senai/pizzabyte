@@ -678,8 +678,6 @@ bebidaBtn?.addEventListener('click', function(e) {
     let totalDoceBebida = localStorage.getItem('total-doce');
     let totalDoceBebidaSomar = parseFloat(totalDoceBebida);
 
-    totalBebida -= totalDoceBebidaSomar - totalSalgadaBebidaSomar;
-
     if (softEscolhida == 'não quero soft drinks') {
         softEscolhida = 'NENHUMA';
     }
