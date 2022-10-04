@@ -678,6 +678,8 @@ bebidaBtn?.addEventListener('click', function(e) {
     let totalDoceBebida = localStorage.getItem('total-doce');
     let totalDoceBebidaSomar = parseFloat(totalDoceBebida);
 
+    // totalBebida -= totalDoceBebidaSomar - totalSalgadaBebidaSomar;
+
     if (softEscolhida == 'não quero soft drinks') {
         softEscolhida = 'NENHUMA';
     }
@@ -835,8 +837,6 @@ function imprimirConfirma() {
         paginaConfirmaTamanhoAlcoolica.innerHTML = 'long neck';
     }
 
-
-
     paginaConfirmaTotalBebida.innerHTML = parseConfirmaTotalBebida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });;
 
     let confirmaNome = localStorage.getItem('nome');
@@ -867,5 +867,4 @@ function imprimirConfirma() {
     if (confirmaTamanhoDoce == 'NENHUMA') {
         blocoConfirmaDoce.style.display = 'none';
     }
-
 }
