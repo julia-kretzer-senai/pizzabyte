@@ -4,3 +4,5 @@
 
 Projeto front-end de pizzaria
 </div>
+
+** Arquivos de interação com o node (app.js, package.json, package-lock.json) funcionam apenas quando todos os outros arquivos (exceto READMNE.md) estão dentro de uma pasta chamada public
