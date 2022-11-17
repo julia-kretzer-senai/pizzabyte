@@ -27,7 +27,8 @@
             <div id="conteudo-bebida">
                 <div class="soft">
                     <h3>soft drinks</h3>
-                    <div class="selecoes-bebida">
+                    <form action="bebida" method="post">
+                        <div class="selecoes-bebida">
                         <select name="soft" id="soft">
                             <option value="soft drink" disabled selected>soft drink</option>
                             <option value="pepsi">pepsi</option>
@@ -38,11 +39,11 @@
                             <option value="agua-gas">água com gás</option>
                             <option value="nenhuma">não quero soft drinks</option>
                         </select>
-                        <input type="radio" value="2" name="tamanho-soft" id="tamanho1" disabled>
+                        <input type="radio" value="2" name="tamanhoSoft" id="tamanho1" disabled>
                         <label for="2l">2L <div class="espaco"> </div> R$12,90</label>
-                        <input type="radio" value="600" name="tamanho-soft" id="tamanho2" disabled>
+                        <input type="radio" value="600" name="tamanhoSoft" id="tamanho2" disabled>
                         <label for="600">600mL <div class="espaco"> </div> R$8,90</label>
-                        <input type="radio" value="lata" name="tamanho-soft" id="tamanho3" disabled>
+                        <input type="radio" value="lata" name="tamanhoSoft" id="tamanho3" disabled>
                         <label for="lata">lata <div class="espaco"> </div> R$5,90</label>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
                             <option value="beats">skol beats</option>
                             <option value="nenhuma">não quero bebida alcoólica</option>
                         </select>
-                        <input type="radio" value="long" name="tamanho-alcoolica" id="tamanho4" disabled>
+                        <input type="radio" value="long" name="tamanhoAlcoolica" id="tamanho4" disabled>
                         <label for="long">long neck <div class="espaco"> </div> R$11,90</label>
                     </div>
                 </div>
@@ -68,8 +69,10 @@
                     
                     <div id="btn-pedido-container-bebida">
                         <a href="doce.html" class="btn-bebida" id="bebida-voltar">voltar</a>
-                        <a href="#" class="btn-bebida" id="bebida-continuar">continuar</a>
+                        <input type="submit" value="continuar" class="btn-pedido">
                     </div>
+                    </form>
+                    
                 </div>
             </div>
     </main>
