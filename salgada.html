@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>PizzaByte | Pizza salgada</title>
     <link rel="icon" type="image/x-icon" href="/img/pizza.ico">
-    <script defer src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body onload="imprimirSalgada()">
     <header>
@@ -25,9 +25,10 @@
         <div id="pedido-salgada" class="pedido-bg">
             <h2>salgada</h2>
             <div class="opcoes">
-                <div class="coluna1">
+                <form action="salgada" method="post">
+                    <div class="coluna1">
                     <h3>tamanho:</h3>
-                    <select name="tamanho-salgada" id="tamanho-salgada" required>
+                    <select name="tamanhoSalgada" id="tamanho-salgada" required>
                         <option value="" disabled selected>selecione o tamanho</option>
                         <option value="p">P R$44,90</option>
                         <option value="m">M R$74,90</option>
@@ -37,10 +38,10 @@
                     </select>
                     <div class="borda">
                         <h3>borda recheada?</h3>
-                        <input type="radio" name="borda" value="sim" id="salgada-sim" disabled>
+                        <input type="radio" name="bordaSalgada" value="sim" id="salgada-sim" disabled>
                         <label for="sim">sim R$9,90</label><br>
 
-                        <input type="radio" name="borda" value="nao" id="salgada-nao" disabled> 
+                        <input type="radio" name="bordaSalgada" value="nao" id="salgada-nao" disabled> 
                         <label for="nao">não</label>
                     </div>
                 </div>
@@ -112,8 +113,9 @@
                         <h3>subtotal: </h3>
                         <p id="salgada-subtotal"></p>
                     </div>
-                        <a href="#" class="btn-pedido" id="salgada-continuar">continuar</a>
+                    <!-- <a id="salgada-continuar">--><input type="submit" value="continuar" class="btn-pedido"><!--</a> -->
                 </div>
+                </form> 
             </div>
         </div>
     </main>
