@@ -258,7 +258,7 @@ let sabor3doce = document.querySelector('#sabor3');
 let sabor4doce = document.querySelector('#sabor4');
 let bordaDoceSim = document.querySelector('#doce-sim');
 let bordaDoceNao = document.querySelector('#doce-nao');
-let subtotalDoce = document.getElementById('doceSubtotal');
+let subtotalDoce = document.getElementById('doce-subtotal');
 let paginaDoce = document.querySelector('#doce');
 
 // funcao disable
@@ -874,6 +874,5 @@ function imprimirConfirma() {
         blocoConfirmaDoce.style.display = 'none';
     }
 }
-
 
 
